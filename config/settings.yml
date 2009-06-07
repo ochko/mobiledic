@@ -1,7 +1,7 @@
 development: &non_production_settings
   site_url: http://localhost:3000
   site_name: Mobiledic
-  admin_email: mobiledic@mobiledic.com
+  admin_email: ochkoo@gmail.com
   
 test:
   <<: *non_production_settings
@@ -9,9 +9,9 @@ test:
 staging:
   site_url: http://staging.example.com
   site_name: Mobiledic
-  admin_email: mobiledic@mobiledic.com  
+  admin_email: ochkoo@gmail.com  
   
 production:
   site_url: http://mobiledic.sequelist.com
   site_name: Mobiledic
-  admin_email: mobiledic@mobiledic.com
+  admin_email: ochkoo@gmail.com
