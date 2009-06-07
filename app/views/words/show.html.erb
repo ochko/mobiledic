@@ -33,6 +33,20 @@
   <%=h @word.mongolian_sentence %>
 </p>
 
-
 <%= link_to 'Edit', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>
+
+
+<h1 id="alpha">Quizzes</h1>
+<%= link_to 'Add New Quiz', new_quiz_path(:word_id => @word) %>
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Quiz type</th>
+    <th>Question</th>
+    <th>Options</th>
+    <th>Correct</th>
+  </tr>
+  <%= render :partial => @word.quizzes -%>
+</table>
+

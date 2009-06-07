@@ -1,0 +1,10 @@
+  <tr>
+    <td><%=h quiz.word_id %></td>
+    <td><%=h quiz.quiz_type_id %></td>
+    <td><%=h quiz.question %></td>
+    <td><%=h quiz.options %></td>
+    <td><%=h quiz.correct %></td>
+    <td><%= link_to 'Show', quiz %></td>
+    <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
+    <td><%= link_to 'Destroy', quiz, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>

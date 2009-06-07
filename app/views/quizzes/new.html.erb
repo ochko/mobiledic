@@ -1,15 +1,11 @@
-<h1>New quiz</h1>
+<h1>New quiz for word "<%= @word.word %>"</h1>
 
 <% form_for(@quiz) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :word_id %><br />
-    <%= f.text_field :word_id %>
-  </p>
+  <%= f.hidden_field :word_id, :value => @quiz.word_id %>
   <p>
     <%= f.label :quiz_type_id %><br />
-    <%= f.text_field :quiz_type_id %>
+    <%= f.collection_select :quiz_type_id, QuizType.all, :id, :name%>
   </p>
   <p>
     <%= f.label :question %><br />

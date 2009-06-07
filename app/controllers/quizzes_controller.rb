@@ -24,7 +24,9 @@ class QuizzesController < ApplicationController
   # GET /quizzes/new
   # GET /quizzes/new.xml
   def new
-    @quiz = Quiz.new
+    @word = Word.find(params[:word_id])
+    @quiz = @word.quizzes.build(params[:quiz])
+    # @quiz = Quiz.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +42,9 @@ class QuizzesController < ApplicationController
   # POST /quizzes
   # POST /quizzes.xml
   def create
+    # @word = Word.find(params[:word_id])
+    # @quiz = @word.quizzes.create!(params[:quiz])
+    
     @quiz = Quiz.new(params[:quiz])
 
     respond_to do |format|
