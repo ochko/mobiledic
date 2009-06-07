@@ -1,0 +1,28 @@
+<p>
+  <b>Word:</b>
+  <%=h @quiz.word_id %>
+</p>
+
+<p>
+  <b>Quiz type:</b>
+  <%=h @quiz.quiz_type_id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%=h @quiz.question %>
+</p>
+
+<p>
+  <b>Options:</b>
+  <%=h @quiz.options %>
+</p>
+
+<p>
+  <b>Correct:</b>
+  <%=h @quiz.correct %>
+</p>
+
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>

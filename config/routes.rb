@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :quiz_types
+
+  map.resources :quizzes
+
   map.resources :words
  
   # Restful Authentication Rewrites

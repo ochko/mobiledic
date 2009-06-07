@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  word_id: 1
+  quiz_type_id: 1
+  question: MyText
+  options: MyText
+  correct: MyString
+
+two:
+  word_id: 1
+  quiz_type_id: 1
+  question: MyText
+  options: MyText
+  correct: MyString

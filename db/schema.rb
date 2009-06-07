@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090607132818) do
+ActiveRecord::Schema.define(:version => 20090607140817) do
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(:version => 20090607132818) do
     t.integer  "user_id"
     t.string   "reset_code"
     t.datetime "expiration_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quiz_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quizzes", :force => true do |t|
+    t.integer  "word_id"
+    t.integer  "quiz_type_id"
+    t.text     "question"
+    t.text     "options"
+    t.string   "correct"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
