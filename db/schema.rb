@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080929171348) do
+ActiveRecord::Schema.define(:version => 20090607132818) do
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -71,5 +71,17 @@ ActiveRecord::Schema.define(:version => 20080929171348) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "words", :force => true do |t|
+    t.string   "word"
+    t.string   "clause"
+    t.string   "pronunciation"
+    t.string   "english_definition"
+    t.string   "mongolian_definition"
+    t.text     "english_sentence"
+    t.text     "mongolian_sentence"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

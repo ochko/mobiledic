@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  word: MyString
+  clause: MyString
+  pronunciation: MyString
+  english_definition: MyString
+  mongolian_definition: MyString
+  english_sentence: MyText
+  mongolian_sentence: MyText
+
+two:
+  word: MyString
+  clause: MyString
+  pronunciation: MyString
+  english_definition: MyString
+  mongolian_definition: MyString
+  english_sentence: MyText
+  mongolian_sentence: MyText

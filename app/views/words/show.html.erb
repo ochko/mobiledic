@@ -1,0 +1,38 @@
+<p>
+  <b>Word:</b>
+  <%=h @word.word %>
+</p>
+
+<p>
+  <b>Clause:</b>
+  <%=h @word.clause %>
+</p>
+
+<p>
+  <b>Pronunciation:</b>
+  <%=h @word.pronunciation %>
+</p>
+
+<p>
+  <b>English definition:</b>
+  <%=h @word.english_definition %>
+</p>
+
+<p>
+  <b>Mongolian definition:</b>
+  <%=h @word.mongolian_definition %>
+</p>
+
+<p>
+  <b>English sentence:</b>
+  <%=h @word.english_sentence %>
+</p>
+
+<p>
+  <b>Mongolian sentence:</b>
+  <%=h @word.mongolian_sentence %>
+</p>
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>

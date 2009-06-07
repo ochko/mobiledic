@@ -46,3 +46,5 @@ div.fieldWithErrors textarea
 {
 	
 }
+
+textarea { height:50px; }
