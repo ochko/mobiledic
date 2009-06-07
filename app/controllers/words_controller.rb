@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  require_role "admin"
   # GET /words
   # GET /words.xml
   def index

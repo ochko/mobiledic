@@ -1,4 +1,5 @@
 class QuizTypesController < ApplicationController
+  require_role "admin"
   # GET /quiz_types
   # GET /quiz_types.xml
   def index

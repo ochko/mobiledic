@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+  require_role "admin"
   # GET /quizzes
   # GET /quizzes.xml
   def index
@@ -26,7 +27,6 @@ class QuizzesController < ApplicationController
   def new
     @word = Word.find(params[:word_id])
     @quiz = @word.quizzes.build(params[:quiz])
-    # @quiz = Quiz.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,9 +42,6 @@ class QuizzesController < ApplicationController
   # POST /quizzes
   # POST /quizzes.xml
   def create
-    # @word = Word.find(params[:word_id])
-    # @quiz = @word.quizzes.create!(params[:quiz])
-    
     @quiz = Quiz.new(params[:quiz])
 
     respond_to do |format|
