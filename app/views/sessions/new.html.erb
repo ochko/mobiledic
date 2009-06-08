@@ -1,20 +1,17 @@
-<%= title "Login", :h2 %>
 <% form_tag session_path do %>
-<fieldset>
-  <legend>Your Details</legend>
-  <ol>
-    <li>
-      <%= label_tag 'login', 'Username' %>
-      <%= text_field_tag 'login', @login %>
-    </li>
-    <li>
-      <%= label_tag 'password' %>
-      <%= password_field_tag 'password', nil %>
-    </li>
-  </ol>
-</fieldset>
-<div class="buttons">
-  <%= submit_tag 'Login' %>
-  <%= link_to 'Forgotten Password', forgot_password_path %>
+<div class="correction">
+  <%= link_to 'signup', signup_path, :class=>"logout" %>
+  <%= submit_tag 'login', :class=>"login" %>
+  <p class="header"><em>Login</em></p>
+  <p class="question"><%= flash_messages %></p>
+  <p class="options">
+    <%= label_tag 'login', 'Username' %><br />
+    <%= text_field_tag 'login', @login %>
+    <br /><br />
+    <%= label_tag 'password' %><br />
+    <%= password_field_tag 'password', nil %>
+  </p>
+  <p class="question"><%= link_to 'Forgotten Password', forgot_password_path %></p>
+  
 </div>
 <% end -%>

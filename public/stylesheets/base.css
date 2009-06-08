@@ -1,27 +1,27 @@
 /* === FLASH MESSAGES === */
 div#flash-notice {
-	
+position:absolute;	
 }
 
 div#flash-warning {
-	
+position:absolute;
 }
 
 div#flash-error {
-	
+position:absolute;
 }
 
 /* === ERROR MESSAGES === */
 div#errorExplanation {
-	
+
 }
 
 div#errorExplanation h2 {
-	
+
 }
 
 div#errorExplanation p {
-	
+
 }
 
 div#errorExplanation ul {
@@ -63,4 +63,6 @@ div.correction p.header {font-size:14px;padding-left:5px; padding-top:70px;}
 div.correction p.question {font-size:16px;padding-left:10px;}
 div.correction p.options {padding-left:12px; padding-top:58px;}
 div.correction .next {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:555px; position:absolute; top:44px;}
+div.correction .signup {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:540px; position:absolute; top:44px;}
+div.correction .login {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:546px; position:absolute; top:44px;}
 div.correction .logout { background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:330px; position:absolute; text-decoration:none; top:44px;}
