@@ -1,10 +1,13 @@
-<% if @learn_detail -%>
-<% form_for(@learn_detail) do |f| -%>
-<p><%= @learn_detail.quiz_type.name %></p>
-<strong><%= @quiz.question.capitalize %></strong>
-<p><%= memo_options @quiz %></p>
-<%= f.submit "next" %>
-<% end -%>
-<% else -%>
-Сурах үг алга
-<% end -%>
+<div class="quiz">
+  <%= link_to 'exit', logout_path, :class=>"logout" %>
+  <% if @learn_detail -%>
+  <% form_for(@learn_detail) do |f| -%>
+  <%= f.submit "next", :class=>"next" %>
+  <p class="header"><em><%= @learn_detail.quiz_type.description %></em></p>
+  <p class="question"><strong><%= @quiz.question.capitalize %></strong></p>
+  <p class="options"><%= memo_options @quiz %></p>
+  <% end -%>
+  <% else -%>
+  <p class="header">Сурах үг алга</p>
+  <% end -%>
+</div>
