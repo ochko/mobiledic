@@ -9,7 +9,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090607140817) do
+ActiveRecord::Schema.define(:version => 20090608141638) do
+
+  create_table "learn_details", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "word_id"
+    t.integer  "quiz_type_id"
+    t.integer  "quiz_id"
+    t.string   "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "learn_generals", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "word_id"
+    t.integer  "quiz_type_id"
+    t.integer  "repetition",      :default => 0
+    t.float    "eazyness_factor", :default => 2.5
+    t.datetime "reviewed_at"
+    t.datetime "planned_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "interval"
+  end
+
+  create_table "learn_processes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "word_id"
+    t.integer  "quiz_type_id"
+    t.float    "eazyness_factor", :default => 2.5
+    t.datetime "reviewed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "interval"
+  end
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"

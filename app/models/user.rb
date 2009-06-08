@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
   
   # Relationships
   has_and_belongs_to_many :roles
+  has_many :learn_details
+  has_many :learn_processes
+  has_many :learn_generals
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
@@ -49,7 +52,19 @@ class User < ActiveRecord::Base
   def password_required?
     new_record? ? not_using_openid? && (crypted_password.blank? || !password.blank?) : !password.blank?
   end
-
+  
+  def learning_quizzes
+    (learn_details + learn_generals).collect { |d| { d.word_id => d.quiz_type_id } }.uniq
+  end
+  
+  def quizzes_completed?
+    !learn_details.detect{ |d| !d.answered? }
+  end
+  
+  def reset_quizzes!
+    learn_details.each{ |d| d.destroy}
+  end
+  
   protected
     
   def make_activation_code

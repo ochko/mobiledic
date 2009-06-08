@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  word_id: 1
+  quiz_type_id: 1
+  repetition: 1
+  eazyness_factor: 1.5
+  reviewed_at: 2009-06-08 12:37:36
+  planned_at: 2009-06-08 12:37:36
+  is_delayed: false
+
+two:
+  user_id: 1
+  word_id: 1
+  quiz_type_id: 1
+  repetition: 1
+  eazyness_factor: 1.5
+  reviewed_at: 2009-06-08 12:37:36
+  planned_at: 2009-06-08 12:37:36
+  is_delayed: false

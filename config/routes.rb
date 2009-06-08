@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :quizzes
 
   map.resources :words
+  map.resources :learn_details
  
   # Restful Authentication Rewrites
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

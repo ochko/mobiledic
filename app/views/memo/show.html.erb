@@ -1,0 +1,8 @@
+<strong><%= @word.word %></strong>
+(<%= @word.clause %>)
+<%= @word.pronunciation %>
+<p><%= @word.english_definition %><br />
+<em><%= @word.mongolian_definition %></em></p>
+<p><%= @word.english_sentence %><br />
+<em><%= @word.mongolian_sentence %></em></p>
+<%= button_to "next", :controller=>:memo, :action => :index %>
