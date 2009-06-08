@@ -1,14 +1,14 @@
 /* === FLASH MESSAGES === */
 div#flash-notice {
-position:absolute;	
+
 }
 
 div#flash-warning {
-position:absolute;
+
 }
 
 div#flash-error {
-position:absolute;
+
 }
 
 /* === ERROR MESSAGES === */
