@@ -65,6 +65,8 @@ class LearnProcess < ActiveRecord::Base
        1
       when 'fff'
        0
+      else
+       0
     end
   end
 end
