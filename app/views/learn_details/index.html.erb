@@ -1,0 +1,23 @@
+<h1>Listing learn_details</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Word</th>
+    <th>Quiz type</th>
+    <th>Quiz</th>
+    <th>Answer</th>
+    <th>Answered at</th>
+  </tr>
+
+<% for learn_detail in @learn_details %>
+  <tr>
+    <td><%=h learn_detail.user_id %></td>
+    <td><%=h learn_detail.word_id %></td>
+    <td><%=h learn_detail.quiz_type_id %></td>
+    <td><%=h learn_detail.quiz_id %></td>
+    <td><%=h learn_detail.answer %></td>
+    <td><%=h learn_detail.created_at %></td>
+  </tr>
+<% end %>
+</table>
