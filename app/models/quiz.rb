@@ -1,5 +1,8 @@
 class Quiz < ActiveRecord::Base
-  PER_QUIZ = 3;
+  PER_QUIZ = 3
+  MAX_OPTIONS = 4
+  OPTIONS_SEP = ';'
+  
   belongs_to :word
   belongs_to :quiz_type
   
@@ -24,12 +27,27 @@ class Quiz < ActiveRecord::Base
     end
   end
   
+  def random_options
+    opts = options.split(OPTIONS_SEP)
+    rands = []
+    MAX_OPTIONS.times { rands << opts.delete_at(rand(opts.length)) unless opts.empty?}
+    rands.insert(rand(rands.length), self.correct)
+  end
+  
   protected
   def self.find_by_word_and_type(h)
     word_id, type_id = 0, 0
     h.each_pair{ |k, v| word_id = k; type_id = v}
-    find(:all, :limit => PER_QUIZ,
-         :conditions => ["word_id=? and quiz_type_id=?", 
-                         word_id, type_id])
+    quizzes = find(:all, :limit => PER_QUIZ,
+                   :conditions => ["word_id=? and quiz_type_id=?", 
+                                   word_id, type_id])
+    quizzes = expand(quizzes) if quizzes.size < PER_QUIZ
+    quizzes
+  end
+  
+  def self.expand(quizzes)
+    quiz = quizzes.sort_by { |q| q.options.size }.pop
+    quizzes << quiz.dup until quizzes.size == PER_QUIZ
+    quizzes
   end
 end
