@@ -10,6 +10,7 @@ class MemoController < ApplicationController
       LearnDetail.build_for_user(current_user, quizzes_det)
     end
     @learn_detail = current_user.learn_details.detect{ |d| !d.answered?}
+    @completed = current_user.learn_details.select{ |d| d.answered?}.count
     @quiz = @learn_detail.quiz if @learn_detail
   end
 

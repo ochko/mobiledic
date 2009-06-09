@@ -1,7 +1,9 @@
 <div class="correction">
   <%= link_to 'exit', logout_path, :class=>"logout" %>
   <%= button_to "next", {:controller=>:memo, :action => :index}, :class=>"next" %>
-  <p class="header"><em>Та буруу хариуллаа</em></p>
+  <div class="header">
+    <%= flash_messages %>
+  </div>
   <p class="question"><strong><%= @word.word %></strong> 
     <em>(<%= @word.clause %>)</em> [<%= @word.pronunciation %>]</p>
   <p class="desc"><strong>Тайлбар</strong>

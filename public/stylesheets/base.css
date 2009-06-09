@@ -1,74 +1,37 @@
 /* === FLASH MESSAGES === */
-div#flash-notice {
-
-}
-
-div#flash-warning {
-
-}
-
-div#flash-error {
-
-}
-
+div#flash-notice { padding-left:10px; display:inline; }
+div#flash-warning {padding-left:10px; display:inline; }
+div#flash-error {padding-left:10px; display:inline; }
 /* === ERROR MESSAGES === */
-div#errorExplanation {
-
-}
-
-div#errorExplanation h2 {
-
-}
-
-div#errorExplanation p {
-
-}
-
-div#errorExplanation ul {
-	
-}
-
-div#errorExplanation ul li {
-	
-}
-
+div#errorExplanation {}
+div#errorExplanation h2 { }
+div#errorExplanation p { }
+div#errorExplanation ul { }
+div#errorExplanation ul li { }
 /* === FORMS === */
-div.fieldWithErrors {
-	
-}
-
-div.fieldWithErrors label {
-	
-}
-
+div.fieldWithErrors { }
+div.fieldWithErrors label { }
 div.fieldWithErrors input, div.fieldWithErrors select, 
-div.fieldWithErrors textarea
-{
-	
-}
+div.fieldWithErrors textarea { }
 body{font-family:Trebuchet MS,Helvetica,sans-serif;}
 textarea { height:50px; }
-
 span.choose {height:44px; display: list-item; list-style-image:none; list-style-position:outside; list-style-type:none;}
-
 div.quiz {margin-left:300px;background:url(/images/back.png) no-repeat 0px 0px; height:480px; width:320px; }
-div.quiz p.header {font-size:14px;padding-left:5px; padding-top:70px;}
-div.quiz p.question {font-size:14px;padding-left:10px;}
+div.quiz div.header {font-size:14px;padding-left:5px; padding-top:70px;}
+div.quiz p.question {font-size:14px;padding-left:10px;margin-bottom:5px; margin-top:10px;}
 div.quiz p.options {width:300px;left:324px; position:absolute; top:196px;}
-div.quiz .next {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:555px; position:absolute; top:44px;}
-div.quiz .logout { background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:330px; position:absolute; text-decoration:none; top:44px;}
-
+div.quiz .next {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:555px; position:absolute; top:38px;}
+div.quiz .logout { background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:330px; position:absolute; text-decoration:none; top:38px;}
 div.correction {margin-left:300px;background:url(/images/blank.png) no-repeat 0px 0px; height:480px; width:320px; }
-div.correction p.header {font-size:14px;padding-left:5px; padding-top:70px;}
-div.correction p.question {font-size:16px;padding-left:10px;}
+div.correction div.header {font-size:14px;padding-left:5px; padding-top:70px;}
+div.correction p.question {font-size:16px;padding-left:10px;margin-bottom:5px; margin-top:5px;}
 div.correction p.options {left:324px; position:absolute; top:196px;width:300px;}
 div.correction p.desc {padding-left:10px;width:300px;}
 div.correction p.example {padding-left:10px;width:300px;}
-div.correction .next {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:555px; position:absolute; top:44px;}
-div.correction .signup {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:540px; position:absolute; top:44px;}
-div.correction .login {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:546px; position:absolute; top:44px;}
-div.correction .logout { background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:330px; position:absolute; text-decoration:none; top:44px;}
-
+div.correction .next {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:555px; position:absolute; top:38px;}
+div.correction .signup {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:540px; position:absolute; top:38px;}
+div.correction .login {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:546px; position:absolute; top:38px;}
+div.correction .logout { background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:330px; position:absolute; text-decoration:none; top:38px;}
 div#header { height:30px; }
 ul.top-menu { color: #333333; list-style-image:none;
 list-style-position:outside;
@@ -79,3 +42,4 @@ td { background-color: #efefef; }
 span.en {padding-top:5px;display:block; background:url(/images/en_flag.png) no-repeat 0px 7px;line-height:24px; padding-left:25px;}
 span.mn {padding-top:5px;display:block; background:url(/images/mn_flag.png) no-repeat 0px 7px;line-height:24px; padding-left:25px;}
 p.desc strong, p.example strong { text-decoration:underline; }
+div.counter{left:446px; position:absolute; top:466px; font-size:13px; font-weight:bold; }

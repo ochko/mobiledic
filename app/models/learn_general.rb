@@ -1,5 +1,5 @@
 class LearnGeneral < ActiveRecord::Base
-  QUIZ_NUMBER = 2
+  QUIZ_NUMBER = 7
   
   def self.todays_quizzes_for(user)
     quizzes = find(:all, :limit=>QUIZ_NUMBER, 
