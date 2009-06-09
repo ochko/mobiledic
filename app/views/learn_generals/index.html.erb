@@ -1,0 +1,34 @@
+<h1>Listing learn_generals</h1>
+
+<table>
+  <tr>
+    <td>User ID</td>
+    <td>Word ID</td>
+    <td>Quiz Type</td>
+    <td>Repetition</td>
+    <td>Interval</td>
+    <td>Eazyness factor</td>
+    <td>Reviewed at</td>
+    <td>Planned at</td>
+  </tr>
+
+<% for learn_general in @learn_generals %>
+  <tr>
+    <td><%= learn_general.user_id %></td>
+    <td><%= learn_general.word_id %></td>
+    <td><%= learn_general.quiz_type_id %></td>
+    <td><%= learn_general.repetition %></td>
+    <td><%= learn_general.interval %></td>
+    <td><%= learn_general.eazyness_factor %></td>
+    <td><%= learn_general.reviewed_at %></td>
+    <td><%= learn_general.planned_at %></td>
+
+    <td><%= link_to 'Edit', edit_learn_general_path(learn_general) %></td>
+    <td><%= link_to 'Destroy', learn_general, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New learn_general', new_learn_general_path %>

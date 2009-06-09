@@ -1,0 +1,43 @@
+<h1>Editing learn_general</h1>
+
+<% form_for(@learn_general) do |f| %>
+  <%= f.error_messages %>
+<p>
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id %>
+</p>
+<p>
+  <%= f.label :word_id %>
+  <%= f.text_field :word_id %>
+</p>
+<p>
+  <%= f.label :quiz_type_id %>
+  <%= f.text_field :quiz_type_id %>
+</p>
+<p>
+  <%= f.label :repetition %>
+  <%= f.text_field :repetition %>
+</p>
+<p>
+  <%= f.label :interval %>
+  <%= f.text_field :interval %>
+</p>
+<p>
+  <%= f.label :eazyness_factor %>
+  <%= f.text_field :eazyness_factor %>
+</p>
+<p>
+  <%= f.label :reviewed_at %>
+  <%= f.datetime_select :reviewed_at %>
+</p>
+<p>
+  <%= f.label :planned_at %>
+  <%= f.datetime_select :planned_at %>
+</p>
+<p>
+  <%= f.submit "Update" %>
+</p>
+<% end %>
+
+<%= link_to 'Show', @learn_general %> |
+<%= link_to 'Back', learn_generals_path %>

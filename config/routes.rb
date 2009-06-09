@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :learn_generals
+
   map.resources :quiz_types
 
   map.resources :quizzes

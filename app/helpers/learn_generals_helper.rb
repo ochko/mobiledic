@@ -1,0 +1,2 @@
+module LearnGeneralsHelper
+end
