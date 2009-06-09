@@ -1,4 +1,5 @@
 class LearnProcessesController < ApplicationController
+  require_role "admin"
   # GET /learn_processes
   # GET /learn_processes.xml
   def index
