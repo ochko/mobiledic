@@ -1,6 +1,6 @@
 development: &non_production_settings
   site_url: http://localhost:3000
-  site_name: Mobiledic
+  site_name: M-Volem
   admin_email: ochkoo@gmail.com
   
 test:
@@ -8,10 +8,10 @@ test:
 
 staging:
   site_url: http://staging.example.com
-  site_name: Mobiledic
+  site_name: M-Volem
   admin_email: ochkoo@gmail.com  
   
 production:
   site_url: http://mobiledic.sequelist.com
-  site_name: Mobiledic
+  site_name: M-Volem
   admin_email: ochkoo@gmail.com
