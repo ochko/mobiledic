@@ -2,7 +2,7 @@
 <div class="correction">
   <%= link_to 'signup', signup_path, :class=>"logout" %>
   <%= submit_tag 'login', :class=>"login" %>
-  <p class="header"><em>Login</em></p>
+  <div class="header"><h1>Login</h1></div>
   <p class="question"><%= flash_messages %></p>
   <p class="options">
     <%= label_tag 'login', 'Username' %><br />
@@ -10,8 +10,8 @@
     <br /><br />
     <%= label_tag 'password' %><br />
     <%= password_field_tag 'password', nil %>
+    <br /><br />
+    <%= link_to 'Forgotten Password', forgot_password_path %>
   </p>
-  <p class="question"><%= link_to 'Forgotten Password', forgot_password_path %></p>
-  
 </div>
 <% end -%>

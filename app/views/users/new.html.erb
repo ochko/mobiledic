@@ -3,24 +3,21 @@
 <div class="correction">
   <%= link_to 'login', login_path, :class=>"logout" %>
   <%= submit_tag 'signup', :class=>"signup" %>
-  <p class="header"><em>Signup</em></p>
+  <div class="header"><h1>Signup</h1></div>
   <p class="question">
     <%= flash_messages %>
     <%= f.error_messages %>
   </p>
-  <p class="options">
-    <%= f.label :login, 'Username' %><br />
-    <%= f.text_field :login %>
-    <br /><br />
-    <%= f.label :email %><br />
+  <div class="register">
+    <p><%= f.label :login, 'Username' %>
+    <%= f.text_field :login %></p>
+    <p><%= f.label :email %>
     <%= f.text_field :email %>
-    <br /><br />
-    <%= f.label :password %><br />
+    <p><%= f.label :password %>
     <%= f.password_field :password %>
-    <br /><br />
-    <%= f.label :password_confirmation, 'Confirm Password' %><br />
-    <%= f.password_field :password_confirmation %>    
-  </p>
+    <p><%= f.label :password_confirmation, 'Confirm Password' %>
+    <%= f.password_field :password_confirmation %></p>
+  </div>
   
 </div>
 <% end -%>

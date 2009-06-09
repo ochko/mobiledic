@@ -6,7 +6,7 @@ class LearnDetail < ActiveRecord::Base
   
   def self.build_for_user(user, quizzes)
     mixed = []
-    quizzes.length.times { mixed << quizzes.delete_at(rand(quizzes.length))}
+    quizzes.length.times { mixed << quizzes.delete_at(rand(quizzes.length)) }
     mixed.each { |q| create!(:user_id => user.id, :word_id => q.word_id,
                              :quiz_type_id => q.quiz_type_id, 
                              :quiz_id => q.id, :answer => '') }

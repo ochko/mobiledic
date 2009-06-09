@@ -11,4 +11,11 @@ module MemoHelper
   def none_of_above(quiz)
     quiz.quiz_type_id == TYPE_ID_OF_MN ? "аль нь ч биш" : "none of above"
   end
+  
+  def page_number(inc=1)
+    details = current_user.learn_details
+    completed = details.select{ |d| d.answered?}.count
+    content_tag(:div, "#{completed+inc}/#{details.length}", 
+                :class=>"counter")
+  end
 end
