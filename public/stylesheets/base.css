@@ -66,3 +66,11 @@ div.correction .next {background:transparent none repeat scroll 0 0; border:medi
 div.correction .signup {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:540px; position:absolute; top:44px;}
 div.correction .login {background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:546px; position:absolute; top:44px;}
 div.correction .logout { background:transparent none repeat scroll 0 0; border:medium none; color:#EEEEEE; font-size:18px; font-weight:bold; left:330px; position:absolute; text-decoration:none; top:44px;}
+
+div#header { height:30px; }
+ul.top-menu { color: #333333; list-style-image:none;
+list-style-position:outside;
+list-style-type:none; }
+li.top-menu {float:left; color: #333333; }
+th { background-color: #d0d0d0; }
+td { background-color: #efefef; }

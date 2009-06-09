@@ -15,17 +15,17 @@
   <body>
     <div id="container">
       <div id="header">
-	<ul>
+	<ul class="top-menu">
 	  <% if logged_in? %>
-	  <li><%= link_to 'Logout', logout_path %></li>
-	  <li><%= link_to 'Words', words_path %></li>
-	  <li><%= link_to 'Quizzes', quizzes_path %></li>
-	  <li><%= link_to 'Generals', learn_generals_path %></li>
-	  <li><%= link_to 'Processes', learn_processes_path %></li>
-	  <li><%= link_to 'Details', learn_details_path %></li>
+	  <li class="top-menu"><%= link_to 'Logout', logout_path %> | </li>
+	  <li class="top-menu"><%= link_to 'Words', words_path %> | </li>
+	  <li class="top-menu"><%= link_to 'Quizzes', quizzes_path %> | </li>
+	  <li class="top-menu"><%= link_to 'Generals', learn_generals_path %>| </li>
+	  <li class="top-menu"><%= link_to 'Processes', learn_processes_path %> | </li>
+	  <li class="top-menu"><%= link_to 'Details', learn_details_path %> </li>
 	  <% else %>
-	  <li><%= link_to 'Login', login_path %></li>
-	  <li><%= link_to 'Signup', signup_path %></li>
+	  <li class="top-menu"><%= link_to 'Login', login_path %> | </li>
+	  <li class="top-menu"><%= link_to 'Signup', signup_path %></li>
 	  <% end %>
 	</ul>
       </div>
