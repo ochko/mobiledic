@@ -1,2 +1,7 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+	$("#learn_detail_submit").attr("disabled", "disabled");
+	$("input[@name='answer']").click(function() {
+		$("#learn_detail_submit").removeAttr("disabled");
+
+            });
+    });

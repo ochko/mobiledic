@@ -10,9 +10,9 @@
   <p class="question"><strong><%= @quiz.question.capitalize %></strong></p>
   <p class="options"><%= memo_options @quiz %></p>
   <% end -%>
-  <div class="counter"><%= @completed+1 %>/21</div>
+  <%= page_number %>
   <% else -%>
   <%= button_to 'next', root_path, :class=>"next" %>
-  <p class="header">Өнөөдрийн үг дууслаа. Дахин үг нэмж үзэх бол 'next' товчыг дарна уу?</p>
+  <div class="header">Өнөөдрийн үг дууслаа. Дахин үг нэмж үзэх бол 'next' товчыг дарна уу?</div>
   <% end -%>
 </div>
