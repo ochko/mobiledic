@@ -5,9 +5,12 @@ class LearnDetail < ActiveRecord::Base
   belongs_to :quiz_type
   
   def self.build_for_user(user, quizzes)
+    mod = quizzes.length/3
+    indxs = (1..mod).map {|i| i*3-2} << (1..mod).map {|i| i*3-1} << (1..mod).map {|i| i*3}
     mixed = []
-    quizzes.length.times { mixed << quizzes.delete_at(rand(quizzes.length)) }
-    mixed.each { |q| create!(:user_id => user.id, :word_id => q.word_id,
+    indxs.flatten.each { |i| mixed << quizzes[i] }
+    mixed << (quizzes - mixed)
+    mixed.flatten.compact.each { |q| create!(:user_id => user.id, :word_id => q.word_id,
                              :quiz_type_id => q.quiz_type_id, 
                              :quiz_id => q.id, :answer => '') }
   end
