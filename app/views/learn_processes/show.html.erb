@@ -1,0 +1,33 @@
+<p>
+  <b>User:</b>
+  <%=h @learn_process.user_id %>
+</p>
+
+<p>
+  <b>Word:</b>
+  <%=h @learn_process.word_id %>
+</p>
+
+<p>
+  <b>Quiz type:</b>
+  <%=h @learn_process.quiz_type_id %>
+</p>
+
+<p>
+  <b>Eazyness factor:</b>
+  <%=h @learn_process.eazyness_factor %>
+</p>
+
+<p>
+  <b>Interval:</b>
+  <%=h @learn_process.interval %>
+</p>
+
+<p>
+  <b>Reviewed at:</b>
+  <%=h @learn_process.reviewed_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_learn_process_path(@learn_process) %> |
+<%= link_to 'Back', learn_processes_path %>

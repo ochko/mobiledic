@@ -1,0 +1,30 @@
+<h1>Listing learn_processes</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Word</th>
+    <th>Quiz type</th>
+    <th>Eazyness factor</th>
+    <th>Interval</th>
+    <th>Reviewed at</th>
+  </tr>
+
+<% for learn_process in @learn_processes %>
+  <tr>
+    <td><%=h learn_process.user_id %></td>
+    <td><%=h learn_process.word_id %></td>
+    <td><%=h learn_process.quiz_type_id %></td>
+    <td><%=h learn_process.eazyness_factor %></td>
+    <td><%=h learn_process.interval %></td>
+    <td><%=h learn_process.reviewed_at %></td>
+    <td><%= link_to 'Show', learn_process %></td>
+    <td><%= link_to 'Edit', edit_learn_process_path(learn_process) %></td>
+    <td><%= link_to 'Destroy', learn_process, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New learn_process', new_learn_process_path %>

@@ -1,0 +1,36 @@
+<h1>Editing learn_process</h1>
+
+<% form_for(@learn_process) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :word_id %><br />
+    <%= f.text_field :word_id %>
+  </p>
+  <p>
+    <%= f.label :quiz_type_id %><br />
+    <%= f.text_field :quiz_type_id %>
+  </p>
+  <p>
+    <%= f.label :eazyness_factor %><br />
+    <%= f.text_field :eazyness_factor %>
+  </p>
+  <p>
+    <%= f.label :interval %><br />
+    <%= f.text_field :interval %>
+  </p>
+  <p>
+    <%= f.label :reviewed_at %><br />
+    <%= f.datetime_select :reviewed_at %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @learn_process %> |
+<%= link_to 'Back', learn_processes_path %>
