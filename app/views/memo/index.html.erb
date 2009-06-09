@@ -8,6 +8,7 @@
   <p class="options"><%= memo_options @quiz %></p>
   <% end -%>
   <% else -%>
-  <p class="header">Сурах үг алга</p>
+  <%= button_to 'next', root_path, :class=>"next" %>
+  <p class="header">Өнөөдрийн үг дууслаа. Дахин үг нэмж үзэх бол 'next' товчыг дарна уу?</p>
   <% end -%>
 </div>
