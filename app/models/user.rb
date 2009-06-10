@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
   include Authorization::AasmRoles
-
+  
   # Validations
   validates_presence_of :login, :if => :not_using_openid?
   validates_length_of :login, :within => 3..40, :if => :not_using_openid?

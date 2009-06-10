@@ -47,3 +47,6 @@ h1 { text-align:center; margin-bottom:5px; margin-top:5px;}
 a,a:visited,a:hover{ color: #336699; }
 div.register input{ width:290px; }
 div.register { padding-left:10px;}
+table#result { background-color: #90a0b0; margin-top:20px; height:330px; width:310px;}
+table#result th { font-size: 13px; }
+table#result td { font-size: 13px;background-color: #e0e0e0; text-align:center;}

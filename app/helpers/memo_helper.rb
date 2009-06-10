@@ -18,4 +18,13 @@ module MemoHelper
     content_tag(:div, "#{completed+inc}/#{details.length}", 
                 :class=>"counter")
   end
+  
+  def todays_result
+    content = '<table id="result"><tr><th>Word</th><th>Quiz Type</th><th>Үнэлгээ</th><th>Давтах</th></tr>'
+    for r in LearnGeneral.today_learned_words(current_user)
+      content << "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" %
+        [r.word.word, r.quiz_type.name, r.eazyness_factor, pluralize(r.interval, 'day')]
+    end
+    content << '</table>'
+  end
 end

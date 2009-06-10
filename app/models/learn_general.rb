@@ -1,5 +1,8 @@
 class LearnGeneral < ActiveRecord::Base
   QUIZ_NUMBER = 7
+  belongs_to :word
+  belongs_to :quiz_type
+  
   
   def self.todays_quizzes_for(user)
     quizzes = find(:all, :limit=>QUIZ_NUMBER, 
@@ -20,5 +23,12 @@ class LearnGeneral < ActiveRecord::Base
       collect{ |g| { g.word_id => g.quiz_type_id } }
     quizzes.flatten
   end
+  
+  def self.today_learned_words(user)
+    find(:all, :order=> 'reviewed_at desc', 
+         :limit => QUIZ_NUMBER,
+         :conditions=>['user_id=?',user.id])
+  end
+  
     
 end
