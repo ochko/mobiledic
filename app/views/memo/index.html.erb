@@ -14,6 +14,7 @@
   <% else -%>
   <%= button_to 'next', root_path, :class=>"next" %>
   <div class="header">
+    <%= flash_messages %>
     <% if current_user.today_learned? -%>
     Өнөөдрийн үг дууслаа. Дахин үг нэмж үзэх бол 'next' товчыг дарна уу?
     <% else -%>

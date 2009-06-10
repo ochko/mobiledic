@@ -58,13 +58,14 @@ class UsersController < ApplicationController
   end
   
   def successful_creation(user)
-    redirect_back_or_default(root_path)
-    flash[:notice] = "Thanks for signing up!"
-    flash[:notice] << " We're sending you an email with your activation code." if @user.not_using_openid?
+    flash[:notice] = "Бүртгүүлсэнд баярлалаа!"
+    flash[:notice] << " Идэвхжүүлэх кодыг мэйлээр тань явуулсан."
+    flash[:notice] << " Мэйлээ шалгаж идэвхжүүлээд, логин хийнэ үү?" if @user.not_using_openid?
     flash[:notice] << " You can now login with your OpenID." unless @user.not_using_openid?
+    redirect_to(login_path)
   end
   
-  def failed_creation(message = 'Sorry, there was an error creating your account')
+  def failed_creation(message = 'Таныг бүртгэх гэтэл алдаа гарлаа.')
     flash[:error] = message
     render :action => :new
   end
