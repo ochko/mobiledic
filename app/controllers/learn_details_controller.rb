@@ -16,6 +16,25 @@ class LearnDetailsController < ApplicationController
   
   def index
     @learn_details = LearnDetail.all
+    respond_to do |format|
+      format.html 
+      format.xml  { render :xml => @learn_details }
+      format.csv { send_csv }
+    end
+    
+  end
+  
+  protected
+  def send_csv
+    csv_string = FasterCSV.generate do |csv|
+      csv << [:user_id, :word_id, :quiz_type_id, :quiz_id, :answer, :answered_at]
+      @learn_details.each do |d|
+        csv << [d.user_id, d.word_id, d.quiz_type_id, d.quiz_id, d.answer, d.created_at]
+      end
+    end
+    send_data csv_string, :filename => 'details.csv',
+    :type => 'text/csv',
+    :disposition => 'attachment'
   end
 
 end

@@ -8,6 +8,7 @@ class LearnGeneralsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @learn_generals }
+      format.csv { send_csv }
     end
   end
 
@@ -82,5 +83,20 @@ class LearnGeneralsController < ApplicationController
       format.html { redirect_to(learn_generals_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  protected
+  
+  def send_csv
+    generals = LearnGeneral.find(:all)
+    csv_string = FasterCSV.generate do |csv|
+      csv << [:user_id, :word_id, :quiz_type_id, :repetition, :interval, :eazyness_factor, :reviewed_at, :planned_at]
+      generals.each do |g|
+        csv << [g.user_id, g.word_id, g.quiz_type_id, g.repetition, g.interval, g.eazyness_factor, g.reviewed_at, g.planned_at]
+      end
+    end
+    send_data csv_string, :filename => 'generals.csv',
+    :type => 'text/csv',
+    :disposition => 'attachment'
   end
 end

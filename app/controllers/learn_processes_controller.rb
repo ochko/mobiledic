@@ -1,3 +1,4 @@
+require 'fastercsv'
 class LearnProcessesController < ApplicationController
   require_role "admin"
   # GET /learn_processes
@@ -8,6 +9,7 @@ class LearnProcessesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @learn_processes }
+      format.csv { send_csv }
     end
   end
 
@@ -82,5 +84,18 @@ class LearnProcessesController < ApplicationController
       format.html { redirect_to(learn_processes_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  protected
+  def send_csv
+    csv_string = FasterCSV.generate do |csv|
+      csv << [:user_id, :word_id, :quiz_type_id, :eazyness_factor, :interval, :reviewed_at]
+      @learn_processes.each do |p|
+        csv << [p.user_id, p.word_id, p.quiz_type_id, p.eazyness_factor, p.interval, p.reviewed_at]
+      end
+    end
+    send_data csv_string, :filename => 'processes.csv',
+    :type => 'text/csv',
+    :disposition => 'attachment'
   end
 end
