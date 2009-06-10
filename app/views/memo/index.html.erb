@@ -13,6 +13,12 @@
   <%= page_number %>
   <% else -%>
   <%= button_to 'next', root_path, :class=>"next" %>
-  <div class="header">Өнөөдрийн үг дууслаа. Дахин үг нэмж үзэх бол 'next' товчыг дарна уу?</div>
+  <div class="header">
+    <% if current_user.today_learned? -%>
+    Өнөөдрийн үг дууслаа. Дахин үг нэмж үзэх бол 'next' товчыг дарна уу?
+    <% else -%>
+    Үргэлжлүүлэх бол 'next' товчыг дарна уу?
+    <% end -%>
+  </div>
   <% end -%>
 </div>

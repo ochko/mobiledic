@@ -65,6 +65,10 @@ class User < ActiveRecord::Base
     learn_details.each{ |d| d.destroy}
   end
   
+  def today_learned?
+    learn_processes.detect { |p| p.created_at < Time.now}
+  end
+  
   protected
     
   def make_activation_code
