@@ -8,6 +8,7 @@ class WordsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @words }
+      format.csv { send_csv }
     end
   end
 
@@ -82,5 +83,18 @@ class WordsController < ApplicationController
       format.html { redirect_to(words_url) }
       format.xml  { head :ok }
     end
+  end
+
+  protected
+  def send_csv
+    csv_string = FasterCSV.generate do |csv|
+      csv << [:id, :word, :clause, :pronunciation, :english_definition, :mongolian_definition,:english_sentence, :mongolian_sentence,]
+      @words.each do |w|
+        csv << [w.id, w.word, w.clause, w.pronunciation, w.english_definition, w.mongolian_definition,w.english_sentence, w.mongolian_sentence,]
+      end
+    end
+    send_data csv_string, :filename => 'words.csv',
+    :type => 'text/csv',
+    :disposition => 'attachment'
   end
 end

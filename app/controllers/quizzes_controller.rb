@@ -8,6 +8,7 @@ class QuizzesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @quizzes }
+      format.csv { send_csv }
     end
   end
 
@@ -84,4 +85,18 @@ class QuizzesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  protected
+  def send_csv
+    csv_string = FasterCSV.generate do |csv|
+      csv << [:word_id, :quiz_type_id, :question, :options, :correct]
+      @quizzes.each do |q|
+        csv << [q.word_id, q.quiz_type_id, q.question, q.options, q.correct]
+      end
+    end
+    send_data csv_string, :filename => 'quizzes.csv',
+    :type => 'text/csv',
+    :disposition => 'attachment'
+  end
+
 end
