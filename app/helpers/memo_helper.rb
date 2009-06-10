@@ -22,9 +22,17 @@ module MemoHelper
   def todays_result
     content = '<table id="result"><tr><th>Word</th><th>Quiz Type</th><th>Үнэлгээ</th><th>Давтах</th></tr>'
     for r in LearnGeneral.today_learned_words(current_user)
-      content << "<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" %
-        [r.word.word, r.quiz_type.name, r.eazyness_factor, pluralize(r.interval, 'day')]
+      content << "<tr><td>%s</td><td>%s</td><td>%s (%s)</td><td>%s</td></tr>" %
+        [r.word.word, r.quiz_type.name, r.eazyness_factor,
+         factor_in_words(r.eazyness_factor), 
+         pluralize(r.interval, 'day')]
     end
     content << '</table>'
+  end
+  
+  def factor_in_words(factor)
+    return 'Муу' if factor <= 1.3
+    return 'Сайн' if factor > 2.5
+    return 'Дундаж'
   end
 end
