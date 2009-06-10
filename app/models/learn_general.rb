@@ -8,11 +8,13 @@ class LearnGeneral < ActiveRecord::Base
       collect{ |g| { g.word_id => g.quiz_type_id } }
     missing = QUIZ_NUMBER - quizzes.size;
     quizzes << Quiz.word_quiz_types_for(user, missing) if missing
+    still_missing = QUIZ_NUMBER - quizzes.flatten.size;
+    quizzes << urgent_quizzes_for(user, still_missing) if still_missing
     quizzes.flatten
   end
   
-  def self.urgent_quizzes_for(user)
-    quizzes = find(:all, :limit=>QUIZ_NUMBER, 
+  def self.urgent_quizzes_for(user, number=QUIZ_NUMBER)
+    quizzes = find(:all, :limit=>number,
                    :conditions =>["user_id =?", 
                                   user.id]).
       collect{ |g| { g.word_id => g.quiz_type_id } }
