@@ -5,10 +5,10 @@ class LearnDetailsController < ApplicationController
     learn_detail = LearnDetail.find(params[:id])
     learn_detail.update_attribute(:answer, params[:answer])
     if learn_detail.correct?
-      flash[:notice] = 'Зөв.'
+      flash[:notice] = 'Хариулт зөв байлаа.'
       redirect_to :controller => :memo, :action => :index
     else
-      flash[:notice] = 'Таны сонгосон үг буруу байлаа. Зөв хариулт нь:'
+      flash[:notice] = 'Хариулт буруу байлаа. Зөв хариулт нь:'
       redirect_to :controller => :memo, :action => :show, :id => learn_detail.word_id
     end
     
