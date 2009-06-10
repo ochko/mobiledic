@@ -12,7 +12,7 @@ namespace :db do
   desc "load quizzes from csv"
   task :load_quizzes  => :environment do
     require 'fastercsv'
-    FasterCSV.foreach("db/quizzes.csv",  { :col_sep => "|" }) do |row|
+    FasterCSV.foreach("db/quizzes.csv",  { :col_sep => "|", :quote_char => "`" }) do |row|
       Quiz.create(:word_id => row[0], :quiz_type_id=> row[1], :question=> row[2],
                   :options=> row[3], :correct=> row[4])
     end    
