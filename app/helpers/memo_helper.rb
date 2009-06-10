@@ -4,8 +4,8 @@ module MemoHelper
   def memo_options(quiz)
     options = quiz.random_options << none_of_above(quiz)
     options.inject(''){ |tag, o| tag << 
-      content_tag(:span, radio_button_tag('answer',o) << 
-                  o, :class=>'choose' ) }
+      content_tag(:span, radio_button_tag('answer',o.strip) << 
+                  o.strip, :class=>'choose' ) }
   end
   
   def none_of_above(quiz)

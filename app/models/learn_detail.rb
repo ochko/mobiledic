@@ -34,7 +34,7 @@ class LearnDetail < ActiveRecord::Base
   end
   
   def correct?
-    quiz.correct == answer
+    quiz.correct.strip.downcase == answer.strip.downcase
   end
   
   def correctness_symbol
