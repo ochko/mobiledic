@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090608160935) do
+ActiveRecord::Schema.define(:version => 20090610141547) do
 
   create_table "learn_details", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20090608160935) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "interval"
+    t.integer  "q"
   end
 
   create_table "learn_processes", :force => true do |t|
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20090608160935) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "interval"
+    t.integer  "q"
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|

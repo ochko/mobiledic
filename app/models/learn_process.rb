@@ -29,6 +29,7 @@ class LearnProcess < ActiveRecord::Base
       process.reviewed_at = Time.now
       process.eazyness_factor = factor
       process.interval = interval
+      process.q = q
       process.save!
       general = LearnGeneral.new(keys) unless general
       general.reviewed_at = Time.now
@@ -36,6 +37,7 @@ class LearnProcess < ActiveRecord::Base
       general.interval = interval
       general.planned_at = general.reviewed_at + interval.days
       general.repetition = repetition
+      general.q = q
       general.save!
 
     end
