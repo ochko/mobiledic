@@ -69,8 +69,8 @@ class User < ActiveRecord::Base
     learn_processes.detect { |p| p.created_at < Time.now}
   end
   
-  def touch!
-    update_attribute(:last_activity_at, Time.now)
+  def touch!(time=Time.now)
+    update_attribute(:last_activity_at, time)
   end
   
   protected
