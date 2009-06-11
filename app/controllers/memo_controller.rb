@@ -1,6 +1,7 @@
 class MemoController < ApplicationController
   before_filter :login_required
   def index
+    current_user.touch!
     if current_user.quizzes_completed?
       LearnProcess.build_from(current_user)
       current_user.reset_quizzes!

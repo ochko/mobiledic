@@ -69,6 +69,10 @@ class User < ActiveRecord::Base
     learn_processes.detect { |p| p.created_at < Time.now}
   end
   
+  def touch
+    update_attribute(:last_activity_at, Time.now)
+  end
+  
   protected
     
   def make_activation_code
