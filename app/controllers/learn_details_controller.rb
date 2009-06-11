@@ -3,6 +3,11 @@ class LearnDetailsController < ApplicationController
   require_role "admin", :except => :update
   def update
     learn_detail = LearnDetail.find(params[:id])
+    if learn_detail.user_id != current_user.id
+      flash[:notice] = 'Буруу үйлдэл!.'
+      redirect_to :controller => :memo, :action => :index
+      return
+    end
     learn_detail.update_attribute(:answer, params[:answer])
     if learn_detail.correct?
       flash[:notice] = 'Хариулт зөв байлаа.'
