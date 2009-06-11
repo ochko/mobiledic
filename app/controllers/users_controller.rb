@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index 
     @users = User.find(:all)
+    render :layout => "application"
   end
   
   def new
