@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
+  require_role :admin, :only => :index
+
+  def index 
+    @users = User.find(:all)
+  end
   
   def new
     @user = User.new
@@ -37,7 +42,7 @@ class UsersController < ApplicationController
       redirect_back_or_default(root_path)
     end
   end
-  
+    
   protected
   
   def create_new_user(attributes)
