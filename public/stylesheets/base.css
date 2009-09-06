@@ -53,3 +53,4 @@ table#result td { font-size: 13px;background-color: #e0e0e0; text-align:center;}
 div#legend { font-size:12px;font-weight:bold; left:430px; position:absolute; top:464px; }
 div#title {font-size:14px;font-weight:bold;left:444px; position:absolute; top:130px; }
 div.titlebar { font-size:12px; font-weight:bold; left:360px; position:absolute; text-align:center; top:10px; width:220px; }
+input#login, input#password {max-width:290px;}
